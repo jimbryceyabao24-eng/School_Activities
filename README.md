@@ -6,7 +6,7 @@ This repository contains my activities, exercises, projects, and practical tasks
 
 👨‍💻 About Me
 
-Name: Jimbryce Yabao
+Name: Jimbryce 
 Course: Bachelor of Science in Computer Science
 Year Level: 3rd Year
 School: NWSSU
