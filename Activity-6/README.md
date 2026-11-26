@@ -1,24 +1,23 @@
+Create a React Native application that implements multi-screen tab navigation and shares data across those screens using global state management.
 
-Create a React Native application that acts as a Notes or To-Do list, ensuring that data is saved locally to the device and remains available even when the app is completely closed and reopened.
+You may create any app that benefits from tabs and shared data, such as a Shopping Cart (Tab 1: Shop, Tab 2: Cart), a User Dashboard (Tab 1: Feed, Tab 2: Settings), or a Theme Switcher app.
 
 Important Clarification:
-This activity is strictly focused on local data persistence. You do not need to implement multi-screen navigation, Context API, or external data fetching. Your main goal is to successfully write data to the device's storage and read it back on startup.
+Do not build a fully functional production app. No external API fetching or local database persistence is required for this activity. This exercise is designed specifically to test your ability to configure a tabbed menu and pass data using the Context API without relying on prop drilling.
 
 Required Features:
--Integrate and configure the @react-native-async-storage/async-storage package to handle device storage.
--Implement all four standard CRUD operations within your app:
---Create: Add a new note/task to your list and save it to storage.
---Read: Use the useEffect hook to load the saved list from storage when the app first mounts, displaying it in the UI.
---Update: Edit an existing note/task and save the modified list.
---Delete: Remove an item from the list and update the storage accordingly.
--Demonstrate the correct handling of complex data by using JSON.stringify() before saving your array to storage, and JSON.parse() when retrieving it.
+-A NavigationContainer wrapping a Tab Navigator (e.g., createBottomTabNavigator) that manages at least 2 distinct screens.
+-Use the Context API to create a global state (createContext and a Provider component).
+-Wrap your navigation or screen components inside this Provider so that the state is accessible globally.
+-Use the useContext hook inside your tab screens to read and update the shared data. (For example, modifying a setting on Tab 2 should instantly reflect a change on Tab 1).
+-Implement a basic loading or error state in your UI. (For example, use conditional rendering to show a "Saving..." text for 1 second when a user updates their profile data before showing the new data).
 
 Submission:
--Upload ONLY the specific code files you created or edited for this exercise
+-Upload ONLY the specific code files you created or edited for this exercise.
 -Do not upload .zip files, folders, or any project configuration files (like package.json or App.json).
 
 Example:
-If your Persistent Notes App uses App.js, StorageService.js, NoteItem.js, and styles.js, upload those four files only.
+-If your Shared State App uses App.js, AppContext.js, HomeTab.js, and ProfileTab.js, upload those four files only.
 
 Focus on:
-Mastering the golden rule of AsyncStorage (stringifying and parsing JSON), ensuring state stays in sync with your local database, and verifying that your CRUD operations successfully persist between app reloads.
+Correctly structuring your NavigationContainer alongside your Context Provider, successfully avoiding prop drilling, and ensuring that state updates in one tab are immediately visible in another tab.
